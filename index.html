@@ -8,6 +8,139 @@
   <meta name="description" content="Taebok Lee - Undergraduate student in Electronics Engineering at Kookmin University. Research interests include 3D vision, robot perception, and Vision-Language-Action models.">
   <link rel="icon" href="./images/favicon.png" type="image/png">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+  <style>
+    /* Mobile-only layout. Desktop remains unchanged. */
+    @media (max-width: 700px) {
+      html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      img, video {
+        max-width: 100%;
+      }
+
+      /* ===== Intro ===== */
+      .intro-row {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      .intro-row > td {
+        display: block;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 12px 20px !important;
+      }
+
+      .intro-row > td:last-child {
+        width: 180px !important;
+        max-width: 180px !important;
+        padding-top: 24px !important;
+        padding-bottom: 0 !important;
+      }
+
+      .intro-row > td:last-child img {
+        width: 160px !important;
+        height: 160px !important;
+        max-width: 160px !important;
+        object-fit: cover;
+      }
+
+      /* ===== News ===== */
+      .news-table td:first-child {
+        width: 72px !important;
+        padding-right: 10px;
+        font-size: 0.92em;
+      }
+
+      /* ===== Publications ===== */
+      .paper-row {
+        display: block;
+      }
+
+      .paper-row > td {
+        display: block;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 10px 16px !important;
+      }
+
+      .paper-row > td:first-child {
+        text-align: center;
+        padding-bottom: 4px !important;
+      }
+
+      .paper-row > td:first-child img,
+      .paper-row > td:first-child video {
+        display: block;
+        width: auto !important;
+        max-width: min(280px, 100%) !important;
+        max-height: 180px;
+        height: auto !important;
+        object-fit: contain;
+        margin: 0 auto;
+      }
+
+      /* ===== Education / Experience ===== */
+      .cv-row {
+        display: grid;
+        grid-template-columns: 68px minmax(0, 1fr);
+        column-gap: 14px;
+        row-gap: 4px;
+        align-items: center;
+        margin: 20px 0;
+      }
+
+      .cv-row > td {
+        display: block;
+        width: auto !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+
+      .cv-row > td:first-child {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        text-align: center;
+      }
+
+      .cv-row > td:first-child img {
+        width: 64px !important;
+        height: 64px !important;
+        max-width: 64px !important;
+        object-fit: contain;
+      }
+
+      .cv-row > td:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+        min-width: 0;
+        line-height: 1.45 !important;
+      }
+
+      .cv-row > td:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: left !important;
+        white-space: normal !important;
+        font-size: 13px;
+        color: #666;
+        line-height: 1.35;
+      }
+
+      /* ===== General spacing ===== */
+      td {
+        overflow-wrap: break-word;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -19,7 +152,7 @@
           <!-- Intro -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
-              <tr>
+              <tr class="intro-row">
                 <td style="padding:2.5%;width:63%;vertical-align:middle;">
 
                   <p class="name" style="text-align:center;">
@@ -63,7 +196,7 @@
                 <td style="padding:16px;width:100%;vertical-align:middle;">
                   <h2>News</h2>
 
-                  <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-top:8px;">
+                  <table class="news-table" style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-top:8px;">
                     <tbody>
 
                       <tr>
@@ -189,7 +322,7 @@
           
           
               <!-- Paper 4 -->
-              <tr>
+              <tr class="paper-row">
                 <td style="padding:16px;width:22%;vertical-align:top;">
                   <video
                     autoplay
@@ -240,7 +373,7 @@
           
                     <table style="width:100%;">
                       <tbody>
-                        <tr>
+                        <tr class="paper-row">
           
                           <td style="padding:16px;width:22%;vertical-align:top;">
                             <img
@@ -281,7 +414,7 @@
           
           
               <!-- Paper 2 -->
-              <tr>
+              <tr class="paper-row">
                 <td style="padding:16px;width:22%;vertical-align:top;">
                   <img
                     src="images/panorama_stitching.png"
@@ -319,7 +452,7 @@
           
                     <table style="width:100%;">
                       <tbody>
-                        <tr>
+                        <tr class="paper-row">
           
                           <td style="padding:16px;width:22%;vertical-align:top;">
                             <img
@@ -392,7 +525,7 @@
                     <tbody>
 
                       <!-- UNIST -->
-                      <tr>
+                      <tr class="cv-row">
                         <td style="padding:0;width:18%;vertical-align:middle;text-align:center;">
                           <img src="images/Unist_logo.jpg"
                                alt="UNIST logo"
@@ -412,7 +545,7 @@
                       </tr>
 
                       
-                      <tr>
+                      <tr class="cv-row">
                         <td style="padding:0;width:18%;vertical-align:middle;text-align:center;">
                           <img src="images/kookmin_University.png" alt="Kookmin University logo"
                               style="width:90px;height:90px;object-fit:contain;">
@@ -446,7 +579,7 @@
                   <table style="width:100%;border:0px;border-spacing:0px 24px;border-collapse:separate;margin-top:10px;">
                     <tbody>
           
-                      <tr>
+                      <tr class="cv-row">
                         <td style="padding:0;width:18%;vertical-align:middle;text-align:center;">
                           <img src="images/3Dvision_Robotics_lab.png" alt="3D Vision and Robotics Lab logo"
                                style="width:100%;max-width:130px;height:auto;object-fit:contain;">
@@ -460,7 +593,7 @@
                         </td>
                       </tr>
                       
-                      <tr>
+                      <tr class="cv-row">
                         <td style="padding:0;width:18%;vertical-align:middle;text-align:center;">
                           <img src="images/Smart Embedded System Lab.png"
                                alt="Smart Embedded Systems Laboratory logo"
@@ -477,7 +610,7 @@
                         </td>
                       </tr>
           
-                      <tr>
+                      <tr class="cv-row">
                         <td style="padding:0;width:18%;vertical-align:middle;text-align:center;">
                           <img src="images/Intergrated_Systems_Lab.png" alt="Integrated Systems Lab logo"
                                style="width:100%;max-width:130px;height:auto;object-fit:contain;">
@@ -492,7 +625,7 @@
                       </tr>
 
                       
-                      <tr>
+                      <tr class="cv-row">
                         <td style="padding:0;width:18%;vertical-align:middle;text-align:center;">
                           <img src="images/army.jpg"
                                alt="Republic of Korea Army"
