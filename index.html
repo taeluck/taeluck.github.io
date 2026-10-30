@@ -282,6 +282,29 @@
             }
           }
 
+
+          a:not(.profile-links a) {
+            color: #333;
+            font-weight: 400;
+            text-decoration: underline;
+            text-decoration-color: #c9c9c9;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            transition: color 0.2s ease,
+                        text-decoration-color 0.2s ease;
+          }
+          
+          /* 방문했던 링크도 동일한 색상 */
+          a:not(.profile-links a):visited {
+            color: #333;
+          }
+          
+          /* 마우스를 올렸을 때 */
+          a:not(.profile-links a):hover {
+            color: #111;
+            text-decoration-color: #555;
+          }
+
     
         </style>
 </head>
