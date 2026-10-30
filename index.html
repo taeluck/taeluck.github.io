@@ -238,6 +238,51 @@
               font-size: 13px;
             }
           }
+
+
+
+          /* ===== Profile Links ===== */
+          .profile-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            margin-top: 20px;
+          }
+          
+          .profile-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #444;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+          }
+          
+          .profile-links a:hover {
+            color: #1772d0;
+          }
+          
+          .profile-links svg {
+            width: 16px;
+            height: 16px;
+            stroke-width: 1.8;
+            flex-shrink: 0;
+          }
+          
+          @media (max-width: 700px) {
+            .profile-links {
+              gap: 10px 14px;
+            }
+          
+            .profile-links a {
+              font-size: 13px;
+            }
+          }
+
+    
         </style>
 </head>
 
@@ -265,14 +310,29 @@
                     My research focuses on 3D vision and robot perception, particularly in 3D reconstruction, robotic perception, and Vision-Language-Action (VLA) models for embodied systems.
                   </p>
 
-                  <p style="text-align:center;">
-                    <a href="mailto:hd210876@gmail.com">Email</a> &nbsp;/&nbsp;
-                    <a href="#">CV</a> &nbsp;/&nbsp;
-                    <a href="https://scholar.google.com/citations?user=tf3dSocAAAAJ&hl=ko">Google Scholar</a> &nbsp;/&nbsp;
-                    <a href="https://github.com/taeluck">Github</a> &nbsp;/&nbsp;
-                    <a href="https://www.linkedin.com/in/taebok-lee">LinkedIn</a>
-                  </p>
+                  <div class="profile-links">
+                    <a href="mailto:hd210876@gmail.com">
+                      <i data-lucide="mail"></i> Email
+                    </a>
+                  
+                    <a href="#">
+                      <i data-lucide="file-text"></i> CV
+                    </a>
+                  
+                    <a href="https://scholar.google.com/citations?user=tf3dSocAAAAJ&amp;hl=ko" target="_blank" rel="noopener noreferrer">
+                      <i data-lucide="graduation-cap"></i> Scholar
+                    </a>
+                  
+                    <a href="https://github.com/taeluck" target="_blank" rel="noopener noreferrer">
+                      <i data-lucide="github"></i> GitHub
+                    </a>
+                  
+                    <a href="https://www.linkedin.com/in/taebok-lee" target="_blank" rel="noopener noreferrer">
+                      <i data-lucide="linkedin"></i> LinkedIn
+                    </a>
+                  </div>
 
+                  
                 </td>
 
                 <td style="padding:2.5%;width:37%;max-width:37%;">
@@ -842,6 +902,15 @@
         </td>
       </tr>
     </tbody>
+
   </table>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
 </body>
 </html>
+
