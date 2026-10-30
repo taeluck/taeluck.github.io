@@ -148,11 +148,96 @@
       }
 
       /* ===== General spacing ===== */
-      td {
-        overflow-wrap: break-word;
-      }
-    }
-  </style>
+            td {
+              overflow-wrap: break-word;
+            }
+          }
+      
+          /* ===== News Accordion ===== */
+          .news-accordion {
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+          }
+      
+          .news-year + .news-year {
+            border-top: 1px solid #e8e8e8;
+          }
+      
+          .news-year summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            list-style: none;
+          }
+      
+          .news-year summary::-webkit-details-marker {
+            display: none;
+          }
+      
+          .news-year summary::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid #777;
+            border-bottom: 2px solid #777;
+            transform: rotate(45deg);
+            transition: transform 0.2s ease;
+          }
+      
+          .news-year[open] summary::after {
+            transform: rotate(225deg);
+          }
+      
+          .news-items {
+            padding: 0 20px 6px;
+          }
+      
+          .news-item {
+            display: grid;
+            grid-template-columns: 55px minmax(0, 1fr);
+            gap: 16px;
+            padding: 13px 0;
+            border-top: 1px solid #ececec;
+            line-height: 1.5;
+          }
+      
+          .news-date {
+            color: #77838a;
+            font-size: 13px;
+            font-weight: 500;
+          }
+      
+          .news-content {
+            color: #333;
+            font-size: 14px;
+          }
+      
+          @media (max-width: 700px) {
+            .news-year summary {
+              padding: 13px 15px;
+            }
+      
+            .news-items {
+              padding: 0 15px 5px;
+            }
+      
+            .news-item {
+              grid-template-columns: 38px minmax(0, 1fr);
+              gap: 10px;
+            }
+      
+            .news-content {
+              font-size: 13px;
+            }
+          }
+        </style>
 </head>
 
 <body>
@@ -200,99 +285,98 @@
               </tr>
             </tbody>
           </table>
-
+          
           <!-- News -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
               <tr>
                 <td style="padding:16px;width:100%;vertical-align:middle;">
                   <h2>News</h2>
-
-                  <table class="news-table" style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-top:8px;">
-                    <tbody>
-
-                      <tr>
-                        <td style="width:95px;vertical-align:top;font-weight:bold;white-space:nowrap;">
-                          2026-07
-                        </td>
-                        <td>
-                          Received the <strong>Undergraduate Paper Award</strong> at ICROS 2026.
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td style="width:95px;vertical-align:top;font-weight:bold;white-space:nowrap;">
-                          2026-06
-                        </td>
-                        <td>
-                          Our paper received the <strong>Best Talk Award</strong> at the ICRA 2026 Workshop on "From Sea to Space: Advancing Perception in Harsh Domains."
-                        </td>
-                      </tr>
-                      
-                      <tr>
-                        <td style="width:95px;vertical-align:top;font-weight:bold;white-space:nowrap;">
-                          2026-05
-                        </td>
-                        <td>
-                          Our paper has been accepted to <strong>ICROS 2026</strong>.
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td style="width:95px;vertical-align:top;font-weight:bold;white-space:nowrap;">
-                          2026-04
-                        </td>
-                        <td>
-                          Our paper was accepted as a <strong>spotlight presentation</strong> at the ICRA 2026 Workshop on “From Sea to Space: Advancing Perception in Harsh Domains.”
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td style="width:95px;vertical-align:top;font-weight:bold;white-space:nowrap;">
-                          2026-02
-                        </td>
-                        <td>
-                          Our paper has been accepted to <strong>Korea Artificial Intelligence Conference 2026</strong>.
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td style="width:95px;vertical-align:top;font-weight:bold;white-space:nowrap;">
-                          2025-12
-                        </td>
-                        <td>
-                          I have joined the <strong>3D Vision &amp; Robotics Lab at UNIST</strong> as a research intern.
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td style="width:95px;vertical-align:top;font-weight:bold;white-space:nowrap;">
-                          2025-09
-                        </td>
-                        <td>
-                          Received the <strong>Outstanding Paper Award</strong> at the Korea Artificial Intelligence Conference 2025.
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td style="width:95px;vertical-align:top;font-weight:bold;white-space:nowrap;">
-                          2025-08
-                        </td>
-                        <td>
-                          Our paper has been accepted to <strong>Korea Artificial Intelligence Conference 2025</strong>.
-                        </td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-
+          
+                  <div class="news-accordion">
+          
+                    <!-- 2026: Open by default -->
+                    <details class="news-year" open>
+                      <summary>2026</summary>
+          
+                      <div class="news-items">
+          
+                        <div class="news-item">
+                          <div class="news-date">JUL</div>
+                          <div class="news-content">
+                            Received the <strong>Undergraduate Paper Award</strong> at ICROS 2026.
+                          </div>
+                        </div>
+          
+                        <div class="news-item">
+                          <div class="news-date">JUN</div>
+                          <div class="news-content">
+                            Our paper received the <strong>Best Talk Award</strong> at the ICRA 2026 Workshop.
+                          </div>
+                        </div>
+          
+                        <div class="news-item">
+                          <div class="news-date">MAY</div>
+                          <div class="news-content">
+                            Our paper was accepted to <strong>ICROS 2026</strong>.
+                          </div>
+                        </div>
+          
+                        <div class="news-item">
+                          <div class="news-date">APR</div>
+                          <div class="news-content">
+                            Our paper was selected for a <strong>Spotlight Presentation</strong> at the ICRA 2026 Workshop.
+                          </div>
+                        </div>
+          
+                        <div class="news-item">
+                          <div class="news-date">FEB</div>
+                          <div class="news-content">
+                            Our paper was accepted to <strong>Korea Artificial Intelligence Conference 2026</strong>.
+                          </div>
+                        </div>
+          
+                      </div>
+                    </details>
+          
+                    <!-- 2025: Collapsed by default -->
+                    <details class="news-year">
+                      <summary>2025</summary>
+          
+                      <div class="news-items">
+          
+                        <div class="news-item">
+                          <div class="news-date">DEC</div>
+                          <div class="news-content">
+                            Joined the <strong>3D Vision &amp; Robotics Lab at UNIST</strong> as a research intern.
+                          </div>
+                        </div>
+          
+                        <div class="news-item">
+                          <div class="news-date">SEP</div>
+                          <div class="news-content">
+                            Received the <strong>Outstanding Paper Award</strong> at the Korea Artificial Intelligence Conference 2025.
+                          </div>
+                        </div>
+          
+                        <div class="news-item">
+                          <div class="news-date">AUG</div>
+                          <div class="news-content">
+                            Our paper was accepted to <strong>Korea Artificial Intelligence Conference 2025</strong>.
+                          </div>
+                        </div>
+          
+                      </div>
+                    </details>
+          
+                  </div>
+          
                 </td>
               </tr>
             </tbody>
           </table>
 
-
-
+          
           <!-- Research -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
@@ -535,7 +619,7 @@
                   <h2>Awards</h2>
           
                   <ul style="margin-top:10px; padding-left:28px; line-height:1.7;">
-                    <li><strong>Best Talk Award</strong> (Spotlight Presentation), ICRA 2026 Workshop</li>
+                    <li><strong>Best Talk Award &amp; Spotlight</strong>, ICRA 2026 Workshop</li>
                     <li><strong>Undergraduate Paper Award</strong>, ICROS 2026</li>
                     <li><strong>Outstanding Paper Award</strong>, Korea Artificial Intelligence Conference 2025</li>
                   </ul>
